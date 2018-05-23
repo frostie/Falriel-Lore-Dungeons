@@ -24,16 +24,41 @@ public class Main {
         int healthPotionDropChance = 50; // Percentage
 
         boolean running = true;
+
         System.out.println("  ");
         System.out.println("*********************************************");
         System.out.println("Welcome to Falriel Lore: Dungeons!");
         System.out.println("  ");
         System.out.println("\t Of late, there have been reports of troublesome entities lurking in the western dungeon.");
-        System.out.println("\t Consider this a chance for you to prove your bravery to the people of Falriel! Go into the dungeon and");
-        System.out.println("\t cleanse our town of those forbidden souls!");
+        System.out.println("\t Consider this a chance for you to prove your bravery to the people of Falriel!");
+        System.out.println("\t Go into the dungeon and cleanse our town of those forbidden souls!");
         System.out.println("  ");
         System.out.println("*********************************************");
         System.out.println("  ");
+
+        INTRO:
+        while(running) {
+            System.out.println("What would you like to do?");
+            System.out.println("\t1. Enter the dungeon.");
+            System.out.println("\t2. Sorry, but I am not brave enough!");
+
+            String input = in.nextLine();
+
+            while (!input.equals("1") && (!input.equals("2"))) {
+                System.out.println("Invalid command. Choose an option by entering 1 or 2.");
+                input = in.nextLine();
+            }
+
+            if (input.equals("1")) {
+                System.out.println("You enter the dungeon.");
+                break INTRO;
+            }
+
+            else if (input.equals("2")) {
+                System.out.println("Okay, see ya!");
+                System.exit(0);
+            }
+        }
 
         GAME:
         while(running) {
@@ -72,8 +97,8 @@ public class Main {
                         health += healthPotionHealAmount;
                         numHealthPots--;
                         System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
-                                        + "\n\t> You now have " + health + " HP."
-                                        + "\n\t> You have " + numHealthPots + " health potions left. \n");
+                                + "\n\t> You now have " + health + " HP."
+                                + "\n\t> You have " + numHealthPots + " health potions left. \n");
                     }
 
                     else {
@@ -91,10 +116,10 @@ public class Main {
                     System.out.println("\t> Invalid command!");
                 }
 
-            if(health < 1) {
-                System.out.println("You limp out of the dungeon, weak from battle.");
-                break;
-            }
+                if(health < 1) {
+                    System.out.println("You limp out of the dungeon, weak from battle.");
+                    break;
+                }
 
                 System.out.println("---------------------------------------------");
                 System.out.println(" # " + enemy + " was defeated!  # ");
@@ -123,7 +148,7 @@ public class Main {
                 }
 
                 else if (input.equals("2")) {
-                    System.out.println("You exit the dungeon, successful from your adventure.");
+                    System.out.println("You exit the dungeon.");
                     System.out.println("###################");
                     System.out.println("Thanks for playing!");
                     System.out.println("###################");
