@@ -24,8 +24,16 @@ public class Main {
         int healthPotionDropChance = 50; // Percentage
 
         boolean running = true;
-
+        System.out.println("  ");
+        System.out.println("*********************************************");
         System.out.println("Welcome to Falriel Lore: Dungeons!");
+        System.out.println("  ");
+        System.out.println("\t Of late, there have been reports of troublesome entities lurking in the western dungeon.");
+        System.out.println("\t Consider this a chance for you to prove your bravery to the people of Falriel! Go into the dungeon and");
+        System.out.println("\t cleanse our town of those forbidden souls!");
+        System.out.println("  ");
+        System.out.println("*********************************************");
+        System.out.println("  ");
 
         GAME:
         while(running) {
@@ -121,10 +129,7 @@ public class Main {
                     System.out.println("###################");
                     break GAME;
                 }
-
             }
-
         }
-
     }
 }
